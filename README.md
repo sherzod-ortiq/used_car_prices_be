@@ -1,2 +1,1 @@
-# used_car_prices_be
-Back end API
+# Used car prices back end
