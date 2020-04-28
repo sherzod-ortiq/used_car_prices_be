@@ -15,6 +15,6 @@ app.all("*", function(req, res){
    res.send("Wrong url");
 });
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 3001, () => {
 	console.log("Server is listening");
 });
