@@ -13,12 +13,15 @@ router.get("/",[
     return res.status(422).json({ errors: errors.array() });
   }
 
+  pool.connect()
 	pool.query(`SELECT models.name FROM manufacturers, models WHERE (manufacturers.id = ${req.query.manufacturer_id} AND models.name LIKE '%${req.query.model_name}%')`, (error, results) => {
 		if(error){
 			throw error
 		}
 		res.status(200).json(results.rows);
 	});
+  pool.end()
+
 });
 
 module.exports = router;
