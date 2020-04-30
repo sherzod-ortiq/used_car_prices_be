@@ -13,7 +13,7 @@ router.get("/",[
     return res.status(422).json({ errors: errors.array() });
   }
 
- 	pool.query(`SELECT models.name FROM manufacturers, models WHERE (manufacturers.id = ${req.query.manufacturer_id} AND models.name LIKE '%${req.query.model_name}%')`, (error, results) => {
+	pool.query(`SELECT name FROM models WHERE (manufacturer_id = ${req.query.manufacturer_id} AND name LIKE '%${req.query.model_name}%')`, (error, results) => {
 		if(error){
 			throw error
 		}
