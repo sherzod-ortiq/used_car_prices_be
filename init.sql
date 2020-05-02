@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS manufacturers;
 CREATE TABLE manufacturers (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255) NOT NULL
+  name VARCHAR(255) UNIQUE NOT NULL
 );
 
 DROP TABLE IF EXISTS models;
